@@ -17,7 +17,7 @@
 
 <br>
 
-📌 DataBase에 정규화를 적용, Database 모델링, ERD도출, 스키마 작성, 새로운 기능추가(스크래핑) 
+📌 DataBase에 정규화를 적용, Database 모델링, ERD도출, 스키마 작성, 새로운 기능추가 (스크래핑) 
 
 <br>
 
