@@ -12,7 +12,7 @@ prefix="c" uri="jakarta.tags.core"%>
     <meta name="generator" content="Hugo 0.101.0" />
     <title>CozyHouse</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/pricing/" />
-    <link href="${root}/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="${root}/assets/css/bootstrap.min.css" rel="stylesheet" />
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5cf74bfffafe691f545e91665afcc8c2&libraries=services"
@@ -76,7 +76,7 @@ prefix="c" uri="jakarta.tags.core"%>
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="./css/pricing.css" rel="stylesheet" />
+    <link href="${root}/assets/css/pricing.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container py-3">
@@ -84,17 +84,17 @@ prefix="c" uri="jakarta.tags.core"%>
         <!-- 상단 네비게이션 바 -->
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
           <span class="fs-4"
-            ><a href="${root}/index.jsp" class="text-decoration-none">CozyHouse</a></span
+            ><a href="${root}/" class="text-decoration-none">CozyHouse</a></span
           >
           <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
             <c:if test="${empty sessionScope.loginInfo}">
               <a
                 class="me-3 py-2 text-dark text-decoration-none"
-                href="${root}/user?act=loginForm"
+                href="${root}/user/login"
               >
                 [로그인]
               </a>
-              <a class="me-3 py-2 text-dark text-decoration-none" href="${root }/user?act=joinForm">
+              <a class="me-3 py-2 text-dark text-decoration-none" href="${root }/user/join">
                 [회원가입]
               </a>
             </c:if>
@@ -106,12 +106,12 @@ prefix="c" uri="jakarta.tags.core"%>
               </a>
               <a
                 class="me-3 py-2 text-dark text-decoration-none"
-                href="${root }/user?act=mypage&userId="
+                href="${root}/user?act=mypage&userId="
                 ${loginInfo.id}
               >
                 [마이페이지]
               </a>
-              <a class="me-3 py-2 text-dark text-decoration-none" href="${root }/user?act=logout">
+              <a class="me-3 py-2 text-dark text-decoration-none" href="${root}/user/logout">
                 [로그아웃]
               </a>
             </c:if>

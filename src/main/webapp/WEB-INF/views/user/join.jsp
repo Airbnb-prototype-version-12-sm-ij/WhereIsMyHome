@@ -8,8 +8,8 @@
 
 <form 
     id="joinForm" 
-    action="${root}/user?act=join" 
-    method="post"
+    action="${root}/user/join" 
+    method="POST"
     onsubmit="return validateForm()">
     <input 
         type="hidden" 
@@ -94,6 +94,8 @@
         type="submit"
         value="JOIN">
 </form>
+
+
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 

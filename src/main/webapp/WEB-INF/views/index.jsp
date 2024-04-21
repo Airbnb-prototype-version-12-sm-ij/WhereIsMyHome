@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib
-prefix="c" uri="jakarta.tags.core"%> <% String root = request.getContextPath();
+prefix="c" uri="jakarta.tags.core"%> 
+
+<%-- <% String root = request.getContextPath();
 application.setAttribute("root", root); %>
+ --%>
+ 
+<c:set var="root" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +87,7 @@ application.setAttribute("root", root); %>
       }
     </style>
 
-    <link href="${root}/css/pricing.css" rel="stylesheet" />
+    <link href="${root}/assets/css/pricing.css" rel="stylesheet" />
   </head>
   <body>
   

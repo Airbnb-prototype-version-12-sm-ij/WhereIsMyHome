@@ -29,14 +29,29 @@ public class UserServlet extends HttpServlet {
 		String act = request.getParameter("act");
 
 
+		// ----------------------GetMapping(login) 완료-----------------------------------------------------
 		if ("loginForm".equals(act)) {
 			request.getRequestDispatcher("/user/login.jsp").forward(request, response);
+		
+			
+			
+			// ----------------------GetMapping(logout) 완료-----------------------------------------------------
 		} else if ("logout".equals(act)) {
 			request.getSession().invalidate();
 			request.setAttribute("msg", "완료되었습니다");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
+			
+			
+			
+			
+			// ----------------------GetMapping(join) 완료-----------------------------------------------------
 		} else if ("joinForm".equals(act)) {
 			request.getRequestDispatcher("/user/join.jsp").forward(request, response);
+			
+			
+			
+			
+			
 		} else if ("mypage".equals(act)) {
 			User user = (User) request.getSession().getAttribute("loginInfo");
 			String id = user.getId();
@@ -53,12 +68,15 @@ public class UserServlet extends HttpServlet {
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		String act = request.getParameter("act");
 		System.out.println("asd");
 		try {
+			
+
+			// ----------------------PostMapping(login) 완료-----------------------------------------------------
 			if ("login".equals(act)) {
 				String id = request.getParameter("userid"); // 인풋 태그에 name이
 				String pw = request.getParameter("userpw");
@@ -72,6 +90,10 @@ public class UserServlet extends HttpServlet {
 					request.getRequestDispatcher("index.jsp").forward(request, response);
 				} else
 					System.out.println("로그인실패");
+				
+				
+
+				// ----------------------PostMapping(join) 완료-----------------------------------------------------
 			} else if ("join".equals(act)) {
 				String id = request.getParameter("userid"); // 인풋 태그에 name이
 				String pw = request.getParameter("userpw");
@@ -84,6 +106,10 @@ public class UserServlet extends HttpServlet {
 //                    request.setAttribute("msg", "가입 완료");
 					request.getRequestDispatcher("index.jsp").forward(request, response);
 				}
+				
+				
+				
+				
 			} else if ("checkpass".equals(act)) {
 				String pw = request.getParameter("userpw");
 
